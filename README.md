@@ -1,9 +1,9 @@
 
-This is the official PyTorch implementation of the paper - "Coupled Swin Transformers and Multi-Apertures Network(CSTA-Net) Improves Medical Image Segmentation". for IEEE ISBI conference 2025
+This is the official PyTorch implementation of the paper - "A Novel 3D Decoder with Weighted and Learnable Triple Attention for 3D Microscopy Image Segmentation". for Workshops on Computer Vision for Microscopy Image Analysis on CVPR Conference 2025
 
 ## Coupled Swin Transformers and Multi-Apertures Network(CSTA-Net) Improves Medical Image Segmentation
 
-![](diagram/CSTANet.png)
+![](diagram/model.png)
 
 ## Set Up Set Up Environment
 ```
@@ -58,7 +58,7 @@ The following settings can be adjusted in the `config.py` to configure the model
 ```
 python3.10 main.py  
 ```
-## Results
+<!-- ## Results
 
 ### Quantitative
 ![](diagram/synapse_num.jpg)
@@ -68,7 +68,7 @@ python3.10 main.py
 ![](diagram/synapse_vis.jpg)
 
 ## ACDC
-![](diagram/acdc_vis.png)
+![](diagram/acdc_vis.png) -->
 
 ## Citation
 If any part of this code is used, please give appropriate citations to our paper. <br />
