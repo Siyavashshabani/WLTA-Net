@@ -1,0 +1,44 @@
+{
+    "data_dir": "./data/",
+    "saved_model_dir": "./saved_model_dir/",
+    "num_samples": 1,
+    "num_classes": 9,
+    "input_size": 256,
+    "input_channels": 1,
+    "feature_size": 48,
+    "use_checkpoint": true,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.00001,
+    "max_iterations": 30000,
+    "eval_num": 300,
+    "n_patches": 64,
+    "encoder_backbone": "Tr",
+    
+    "patches": {
+        "size": [8, 8, 8],
+        "grid": [8, 8, 8]
+    },
+    "shallow_rec": true,
+    "hidden_size": 128,
+    "att_mechanism": "DirectTriple",
+    "type_combine": "weights", 
+    "up_hyper": 0.25, 
+    "middle_hyper": 0.5,     
+    "down_hyper": 0.25,     
+    "first_row": "self",     
+
+
+    "transformer": {
+        "mlp_dim": 3072,
+        "num_heads": 8,
+        "num_layers": 1,
+        "attention_dropout_rate": 0.0,
+        "dropout_rate": 0.4
+    },
+    "patch_size": 8,
+    "n_channels": 48,
+    "encoder_channels": 32,
+    "down_factor": 2,
+    "down_num": 2,
+    "target_size": 4
+}
