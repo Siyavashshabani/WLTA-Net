@@ -1,13 +1,13 @@
 
 This is the official PyTorch implementation of the paper - "A Novel 3D Decoder with Weighted and Learnable Triple Attention for 3D Microscopy Image Segmentation". for Workshops on Computer Vision for Microscopy Image Analysis on CVPR Conference 2025
 
-## Coupled Swin Transformers and Multi-Apertures Network(CSTA-Net) Improves Medical Image Segmentation
+## A Novel 3D Decoder with Weighted and Learnable Triple Attention for 3D Microscopy Image Segmentation
 
 ![](diagram/model.png)
 
 ## Set Up Set Up Environment
 ```
-python3.10 -m venv CSTANet_env 
+python3.10 -m venv ViT_env 
 source CSTANet_env/bin/activate 
 pip install -r requirements.txt
 ```
