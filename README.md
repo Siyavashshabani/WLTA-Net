@@ -1,9 +1,9 @@
 
-This is the official PyTorch implementation of the paper - "A Novel 3D Decoder with Weighted and Learnable Triple Attention for 3D Microscopy Image Segmentation". for Workshops on Computer Vision for Microscopy Image Analysis on CVPR Conference 2025
+This is the official PyTorch implementation of the paper - "A Novel 3D Decoder with Weighted and Learnable Triple Attention for Segmentation of 3D Microscopy Images". for Workshops on Computer Vision for Microscopy Image Analysis on CVPR Conference 2025
 
 ## A Novel 3D Decoder with Weighted and Learnable Triple Attention for 3D Microscopy Image Segmentation
 
-![](diagram/model.png)
+![](diagram/WLTA-Net.png)
 
 ## Set Up Set Up Environment
 ```
@@ -59,17 +59,7 @@ The following settings can be adjusted in the `config.py` to configure the model
 ```
 python3.10 main.py  
 ```
-<!-- ## Results
 
-### Quantitative
-![](diagram/synapse_num.jpg)
-
-### Visulization 
-## Synapse 
-![](diagram/synapse_vis.jpg)
-
-## ACDC
-![](diagram/acdc_vis.png) -->
 
 ## Citation
 If any part of this code is used, please give appropriate citations to our paper. <br />
