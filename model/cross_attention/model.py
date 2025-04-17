@@ -18,12 +18,6 @@ from monai.utils import ensure_tuple_rep, look_up_option, optional_import
 from torch.nn import Dropout, Softmax, Linear, Conv3d, LayerNorm
 
 class PatchMergingV2(nn.Module):
-    """
-    Patch merging layer based on: "Liu et al.,
-    Swin Transformer: Hierarchical Vision Transformer using Shifted Windows
-    <https://arxiv.org/abs/2103.14030>"
-    https://github.com/microsoft/Swin-Transformer
-    """
 
     def __init__(self, dim: int, norm_layer: type[LayerNorm] = nn.LayerNorm, spatial_dims: int = 3) -> None:
         """
@@ -210,8 +204,6 @@ class CAtDecConvNet(nn.Module):
         ## final layer 
         self.out = UnetOutBlock(spatial_dims=spatial_dims, in_channels=feature_size, out_channels=out_channels)
         
-        
-
     def forward(self, x_in):
         
         ## encoder 
@@ -219,9 +211,7 @@ class CAtDecConvNet(nn.Module):
                
         ## conv layers
         x_0, x_1, x_2, x_3, x_4 = self.conv_branch(x_in, hidden_states[0], hidden_states[1], hidden_states[2], hidden_states[3])
-        
-        print("pass the conv",x_0.shape, x_1.shape, x_2.shape, x_3.shape, x_4.shape )
-        
+                
         ## Embedding path 
         embeded_0, embeded_1, embeded_2, embeded_3, embeded_4 = self.embedding_branch(x_0, 
                                                                                       x_1, 
@@ -231,9 +221,7 @@ class CAtDecConvNet(nn.Module):
         
         ## cross attention layers 
         out_up_03, out_up_12, out_up_21, final_out = self.cross_attention_branch(embeded_0, embeded_1, embeded_2, embeded_3, embeded_4)
-        print("pass the cross attention",hidden_states[3].shape,out_up_03.shape, out_up_12.shape, out_up_21.shape, final_out.shape)    
         logits = self.out(final_out )
-        # print("logits-------------------", logits.shape)
         
         return logits
     
@@ -389,14 +377,10 @@ class WLTANet(nn.Module):
         
         ## cross attention layers 
         out_3, out_2, out_1, out_0 = self.cross_attention_branch(embeded_0, embeded_1, embeded_2, embeded_3, embeded_4)
-        # print("pass the cross attention",hidden_states[3].shape,out_3.shape, out_2.shape, out_1.shape, out_0.shape)    
             
         ## decoder branch 
         logits = self.decoder_branch(x_4, out_3, out_2, out_1, out_0)
         
         return logits
  
-
-
-################################################################## shallow converter blocks 
 
